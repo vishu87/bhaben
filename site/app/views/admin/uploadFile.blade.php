@@ -14,7 +14,7 @@
 
 <div style="background:#FFF; padding: 10px 0;min-height: 550px;">
     <div class="container">
-        <h2 class="page-title">Upload Trainging Progress Report</h2>
+        <h2 class="page-title">Upload Training Progress Report</h2>
         @if(Session::has('success'))
             <div class="alert alert-success alert-dismissable">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
