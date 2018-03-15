@@ -52,9 +52,9 @@
                 <!-- BEGIN HEADER INNER -->
                 <div class="page-header-inner ">
                     
-                    <div class="page-logo">
+                    <div class="page-logo" style="padding-top: 10px">
                         <a href="#">
-                            <img src="{{url('/assets/img/bmw23.png')}}" style="height: 44px; width: auto; margin-top: 5px">
+                            <img src="{{url('/assets/img/schulms_logo-white.svg')}}" style="height: 36px; width: auto; ">
                         </a>
                     </div>
 
@@ -62,7 +62,7 @@
                         <ul class="nav navbar-nav">
                             <!-- DOC: Remove data-hover="megamenu-dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
                             <li class="classic-menu-dropdown active" aria-haspopup="true">
-                                <a href="{{url('/dashboard')}}"> Progam Manager
+                                <a href="{{url('/upload-file')}}"> Upload File
                                     
                                 </a>
                             </li>

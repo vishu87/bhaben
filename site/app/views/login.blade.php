@@ -31,8 +31,8 @@
 
     <body class="login">
         <div class="top-logo">
-            <div style="padding: 10px;">
-                <img src="assets/img/EY-logo-li.png" style="width: 100px; height: auto">
+            <div style="padding: 40px;">
+                
             </div>
         </div>
         <!-- BEGIN LOGIN -->
@@ -44,7 +44,7 @@
                         <div class="col-md-12">
                             <div class="login-cont">
                                 <div class="logo" style="margin-bottom: 10px;">
-                                    <img src="{{url('assets/img/bmw.png')}}" style="width: 100px; height: auto">
+                                    <img src="{{url('assets/img/schulms_logo.png')}}" style="width: 287px; height: auto">
                                 </div>
                                 <h4 style="font-size: 20px; text-align: center; margin-bottom: 20px; text-transform: uppercase;">Login to your account</h4>
                                 @if(Session::has('success'))
