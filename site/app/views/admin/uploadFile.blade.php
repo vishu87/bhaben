@@ -22,11 +22,13 @@
             </div>
         @endif
         {{Form::open(["url"=>"/upload-file","method"=>"post","files"=>"true"])}}
-            <div class="form-group">
-                <label>Select File</label>
-                {{Form::file('report',["class"=>"form-control","required"=>true])}}
-                <span class="error">{{$errors->first('report')}}</span>
-                <span class="error">{{$errors->first('extension')}}</span>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label>Select File</label>
+                    {{Form::file('report',["class"=>"form-control","required"=>true])}}
+                    <span class="error">{{$errors->first('report')}}</span>
+                    <span class="error">{{$errors->first('extension')}}</span>
+                </div>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary">Submit</button>
