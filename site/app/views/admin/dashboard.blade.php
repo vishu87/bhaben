@@ -9,6 +9,18 @@
                     </div>
                 </div>
             </div>
+            @foreach($subProducts as $product)
+                <div class="col-md-3 col-sm-6 dash-item-front">
+                    <a href="{{url('/job-progress/'.$product->id)}}">
+                        <div class="dash-on" onclick="">
+                            <div class="text">{{$product->name}}</div>
+                            <div class="icon">
+                                <i class="fa fa-clock-o"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
             <div class="col-md-3 col-sm-6 dash-item-front">
                 <div class="dash-on">
                     <div class="text">Aftersales</div>
@@ -33,10 +45,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row dash-row">
+        <!-- </div>
+        <div class="row dash-row"> -->
             
-            <div class="col-md-3 col-sm-6 dash-item-front  col-md-offset-1">
+            <div class="col-md-3 col-sm-6 dash-item-front ">
                 <div class="dash-on">
                     <div class="text">Customer Satisfaction</div>
                     <div class="icon">

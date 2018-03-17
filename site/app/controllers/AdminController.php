@@ -3,8 +3,9 @@ class AdminController  extends BaseController {
     protected $layout = 'layout';
 
     public function dashboard(){
+    	$subProducts = SubProduct::get();
         $this->layout->sidebar = "";
-        $this->layout->main = View::make('admin.dashboard');
+        $this->layout->main = View::make('admin.dashboard',["subProducts"=>$subProducts]);
     }
 
     public function sales(){
@@ -116,5 +117,19 @@ class AdminController  extends BaseController {
     		return Redirect::back()->withErrors($validator);
     	}
     }
+
+    public function jobProgressReport($subproduct_id){
+    	$jobs = TrainingProgressReport::distinct()->where('subproduct_id',$subproduct_id)->get(['job','job_code']);
+    	$this->layout->sidebar = "";
+        $this->layout->main = View::make('admin.progress-report',["jobs"=>$jobs , "subproduct_id"=>$subproduct_id]);
+    }
    	
+   	public function jobMembers($job_code , $subproduct_id){
+   		$jobDetails = TrainingProgressReport::select('job','sub_products.name as sub_product')->where('subproduct_id',$subproduct_id)->where('job_code',$job_code)->join('sub_products','sub_products.id','=','training_progress_report.subproduct_id')->first();
+   		$jobDetails->subproduct_id = $subproduct_id;
+   		$jobDetails->members = TrainingProgressReport::select('full_name','seniority_months','month_step','indivisual_global_training_progress','indivisual_expected_global_training_progress','expected_against_actual','available_fixed_step_months','month_of_no_training')->where('subproduct_id',$subproduct_id)->where('job_code',$job_code)->get();
+
+   		$this->layout->sidebar = "";
+        $this->layout->main = View::make('admin.members',["jobDetails"=>$jobDetails]);
+   	}
 }
