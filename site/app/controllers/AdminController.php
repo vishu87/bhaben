@@ -126,8 +126,10 @@ class AdminController  extends BaseController {
    	
    	public function jobMembers($job_code , $subproduct_id){
    		$jobDetails = TrainingProgressReport::select('job','sub_products.name as sub_product')->where('subproduct_id',$subproduct_id)->where('job_code',$job_code)->join('sub_products','sub_products.id','=','training_progress_report.subproduct_id')->first();
+   		
    		$jobDetails->subproduct_id = $subproduct_id;
-   		$jobDetails->members = TrainingProgressReport::select('full_name','seniority_months','month_step','indivisual_global_training_progress','indivisual_expected_global_training_progress','expected_against_actual','available_fixed_step_months','month_of_no_training')->where('subproduct_id',$subproduct_id)->where('job_code',$job_code)->get();
+   		
+   		$jobDetails->members = TrainingProgressReport::select('full_name','seniority_months','month_step','indivisual_global_training_progress','indivisual_expected_global_training_progress','expected_against_actual','available_fixed_step_months','month_of_no_training')->where('subproduct_id',$subproduct_id)->where('job_code',$job_code)->orderBy('indivisual_global_training_progress','ASC')->get();
 
    		$this->layout->sidebar = "";
         $this->layout->main = View::make('admin.members',["jobDetails"=>$jobDetails]);

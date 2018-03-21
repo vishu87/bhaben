@@ -281,7 +281,7 @@
         <!-- BEGIN ANGULAR SCRIPTS -->
         
 
-        {{HTML::script('assets/admin/scripts/echarts.common.min.js')}}
+        
 
         {{HTML::script('assets/admin/scripts/custom.js?version=1.0.7')}}
         

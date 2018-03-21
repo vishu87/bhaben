@@ -21,7 +21,7 @@
                         <div class="dash-on" onclick="">
                             <div class="text">{{$job->job}}</div>
                             <div class="icon">
-                                <i class="fa fa-clock-o"></i>
+                                <i class="fa fa-cog"></i>
                             </div>
                         </div>
                     </a>
